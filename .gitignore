@@ -19,3 +19,13 @@
 
 # Go workspace file
 go.work
+
+# VIM
+.*.swp
+.*.swo
+
+# MacOS
+.DS_Store
+
+# Binary
+terraform-provider-pgp
