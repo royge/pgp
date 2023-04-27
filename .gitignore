@@ -28,4 +28,12 @@ go.work
 .DS_Store
 
 # Binary
-terraform-provider-pgp
+terraform-provider-pgp*
+
+# Terraform
+.terraform*
+*.tfstate
+*.tfstate.*
+
+# Test file
+secret.gpg
