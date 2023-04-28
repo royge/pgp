@@ -8,3 +8,11 @@ build:
 install:
 	mkdir -p ~/Library/Application\ Support/io.terraform/plugins/$(provider_path)/darwin_arm64
 	cp terraform-provider-pgp_$(version) ~/Library/Application\ Support/io.terraform/plugins/$(provider_path)/darwin_arm64
+
+enc-env:
+ifndef RECIPIENT
+	$(error RECIPIENT is not defined)
+endif
+
+encrypt: enc-env
+	gpg --output secret.gpg --encrypt --recipient ${RECIPIENT} secret.txt
