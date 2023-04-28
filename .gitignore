@@ -36,4 +36,4 @@ terraform-provider-pgp*
 *.tfstate.*
 
 # Test file
-secret.gpg
+secret.txt.gpg

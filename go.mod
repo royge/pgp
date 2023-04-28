@@ -1,4 +1,4 @@
-module github.com/royge/pgp
+module github.com/royge/terraform-provider-pgp
 
 go 1.20
 

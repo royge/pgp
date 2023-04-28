@@ -7,5 +7,5 @@ terraform {
   }
 }
 resource "pgp_cipher" "secret_cipher" {
-  filename = "secret.gpg"
+  filename = "secret.txt.gpg"
 }

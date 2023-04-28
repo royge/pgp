@@ -15,4 +15,4 @@ ifndef RECIPIENT
 endif
 
 encrypt: enc-env
-	gpg --output secret.gpg --encrypt --recipient ${RECIPIENT} secret.txt
+	gpg --output secret.txt.gpg --encrypt --recipient ${RECIPIENT} secret.txt
