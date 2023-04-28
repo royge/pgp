@@ -39,16 +39,16 @@ func resourceCipherCreate(d *schema.ResourceData, m interface{}) error {
 	d.SetId(filename)
 	return nil
 }
+
 func resourceCipherRead(d *schema.ResourceData, m interface{}) error {
 	filename := d.Get("filename").(string)
-	if d.Id() != filename {
-		if !isFileExist(filename) {
-			d.SetId("")
-			return nil
-		}
+	if !isFileExist(filename) {
+		return fmt.Errorf("File %s does not exist.", filename)
 	}
+	d.SetId(filename)
 	return d.Set("filename", filename)
 }
+
 func resourceCipherUpdate(d *schema.ResourceData, m interface{}) error {
 	d.Partial(true)
 	if d.HasChange("filename") {
@@ -56,6 +56,7 @@ func resourceCipherUpdate(d *schema.ResourceData, m interface{}) error {
 		if !isFileExist(filename) {
 			return fmt.Errorf("File %s does not exist.", filename)
 		}
+		d.SetId(filename)
 	}
 	d.Partial(false)
 	return nil
