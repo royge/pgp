@@ -1,4 +1,4 @@
-package pgp
+package age
 
 import (
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
@@ -7,7 +7,7 @@ import (
 func Provider() *schema.Provider {
 	return &schema.Provider{
 		ResourcesMap: map[string]*schema.Resource{
-			"pgp_cipher": resourceCipher(),
+			"age_cipher": resourceCipher(),
 		},
 	}
 }

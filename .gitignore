@@ -29,11 +29,19 @@ go.work
 
 # Binary
 terraform-provider-pgp*
+terraform-provider-age*
 
 # Terraform
 .terraform*
 *.tfstate
 *.tfstate.*
+*.plan
 
 # Test file
 secret.txt.gpg
+
+# Keys
+secring.gpg
+
+# Environment variables
+.envrc*

@@ -1,11 +1,16 @@
 terraform {
   required_providers {
-    pgp = {
+    age = {
       version = "~> 1.0.0"
-      source  = "royge/pgp"
+      source  = "royge/age"
     }
   }
 }
-resource "pgp_cipher" "secret_cipher" {
-  filename = "secret.txt.gpg"
+resource "age_cipher" "secret_cipher" {
+  filename = "secret.txt.age"
+}
+
+output "result" {
+  value     = age_cipher.secret_cipher.result
+  sensitive = true
 }
