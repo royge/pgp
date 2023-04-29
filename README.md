@@ -1,2 +1,2 @@
-# pgp
-A terraform provider for PGP
+# age
+A terraform provider for age
